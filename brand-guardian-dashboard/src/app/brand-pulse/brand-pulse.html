@@ -1,0 +1,86 @@
+<div class="relative flex size-full min-h-screen flex-col bg-slate-50 group/design-root overflow-x-hidden" style='font-family: Inter, "Noto Sans", sans-serif;'>
+  <div class="layout-container flex h-full grow flex-col">
+    <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#e7edf3] px-10 py-3">
+      <div class="flex items-center gap-8">
+        <div class="flex items-center gap-4 text-[#0e141b]">
+          <div class="size-4">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M4 42.4379C4 42.4379 14.0962 36.0744 24 41.1692C35.0664 46.8624 44 42.2078 44 42.2078L44 7.01134C44 7.01134 35.068 11.6577 24.0031 5.96913C14.0971 0.876274 4 7.27094 4 7.27094L4 42.4379Z"
+                fill="currentColor"
+              ></path>
+            </svg>
+          </div>
+          <h2 class="text-[#0e141b] text-lg font-bold leading-tight tracking-[-0.015em]">Brand Pulse</h2>
+        </div>
+        <div class="flex items-center gap-9">
+          <a class="text-[#0e141b] text-sm font-medium leading-normal" href="#">Dashboard</a>
+          <a class="text-[#0e141b] text-sm font-medium leading-normal" href="#">Reports</a>
+          <a class="text-[#0e141b] text-sm font-medium leading-normal" href="#">Alerts</a>
+          <a class="text-[#0e141b] text-sm font-medium leading-normal" href="#">Settings</a>
+        </div>
+      </div>
+      <div class="flex flex-1 justify-end gap-8">
+        <label class="flex flex-col min-w-40 !h-10 max-w-64">
+          <div class="flex w-full flex-1 items-stretch rounded-lg h-full">
+            <div
+              class="text-[#4e7397] flex border-none bg-[#e7edf3] items-center justify-center pl-4 rounded-l-lg border-r-0"
+              data-icon="MagnifyingGlass"
+              data-size="24px"
+              data-weight="regular"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                <path
+                  d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"
+                ></path>
+              </svg>
+            </div>
+            <input
+              placeholder="Search"
+              class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#0e141b] focus:outline-0 focus:ring-0 border-none bg-[#e7edf3] focus:border-none h-full placeholder:text-[#4e7397] px-4 rounded-l-none border-l-0 pl-2 text-base font-normal leading-normal"
+              value=""
+            />
+          </div>
+        </label>
+        <div
+          class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10"
+          style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD-tM0tOKoC-Fbrgmt322XwmBlXBlpYcJsQustj2LfaKC1oxtW_o6TTRdE2ereANudaWkqYj6NIupXIeQOuPDzPkGgWVAAuM_jwSc9XrA_pRR35titi5UVgqdOHD27fyWZ4YG4lhlgLFXunXGQmyzrkTYF1ff8ju9_QSdvIwKIZat0ieAFA0MpSb2Uz6y9jqPG1Vcs0r2pfEeokdpFFMtYkB5JXru4bH8A-qM-BZEKuusa0lzeIrxVK7h0wdC7U3_fB_EDPdD27d5oT");'
+        ></div>
+      </div>
+    </header>
+    <div class="px-40 flex flex-1 justify-center py-5">
+      <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
+        <div class="flex flex-wrap justify-between gap-3 p-4">
+          <p class="text-[#0e141b] tracking-light text-[32px] font-bold leading-tight min-w-72">Brand Sentiment Overview</p>
+        </div>
+        <div class="flex flex-wrap gap-4 p-4">
+          <div class="flex min-w-[158px] flex-1 flex-col gap-2 rounded-lg p-6 bg-[#e7edf3]">
+            <p class="text-[#0e141b] text-base font-medium leading-normal">Positive</p>
+            <p class="text-[#0e141b] tracking-light text-2xl font-bold leading-tight">{{ brandData?.sentiment?.positive || 65 }}%</p>
+          </div>
+          <div class="flex min-w-[158px] flex-1 flex-col gap-2 rounded-lg p-6 bg-[#e7edf3]">
+            <p class="text-[#0e141b] text-base font-medium leading-normal">Negative</p>
+            <p class="text-[#0e141b] tracking-light text-2xl font-bold leading-tight">{{ brandData?.sentiment?.negative || 20 }}%</p>
+          </div>
+          <div class="flex min-w-[158px] flex-1 flex-col gap-2 rounded-lg p-6 bg-[#e7edf3]">
+            <p class="text-[#0e141b] text-base font-medium leading-normal">Neutral</p>
+            <p class="text-[#0e141b] tracking-light text-2xl font-bold leading-tight">{{ brandData?.sentiment?.neutral || 15 }}%</p>
+          </div>
+        </div>
+        <div class="flex flex-wrap gap-4 px-4 py-6">
+          <div class="flex min-w-72 flex-1 flex-col gap-2 rounded-lg border border-[#d0dbe7] p-6">
+            <p class="text-[#0e141b] text-base font-medium leading-normal">Sentiment Distribution</p>
+            <div class="grid min-h-[180px] grid-flow-col gap-6 grid-rows-[1fr_auto] items-end justify-items-center px-3">
+              <div class="border-[#4e7397] bg-[#e7edf3] border-t-2 w-full" [style.height.%]="brandData?.distribution?.positive || 70"></div>
+              <p class="text-[#4e7397] text-[13px] font-bold leading-normal tracking-[0.015em]">Positive</p>
+              <div class="border-[#4e7397] bg-[#e7edf3] border-t-2 w-full" [style.height.%]="brandData?.distribution?.negative || 90"></div>
+              <p class="text-[#4e7397] text-[13px] font-bold leading-normal tracking-[0.015em]">Negative</p>
+              <div class="border-[#4e7397] bg-[#e7edf3] border-t-2 w-full" [style.height.%]="brandData?.distribution?.neutral || 60"></div>
+              <p class="text-[#4e7397] text-[13px] font-bold leading-normal tracking-[0.015em]">Neutral</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
